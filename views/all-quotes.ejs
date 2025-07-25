@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body{
+            text-align: center;
+        }
+        ul {
+           list-style-type: none;
+        }
+        #addNew{
+            margin-left: 15px;
+        }
+    </style>
+    <title>All Quotes</title>
+</head>
+<body>
+    <h1>All Quotes Here</h1>
+    <a href="/quotes/writeQuote" id="addNew"> Add New Quote </a>
+    <ul >
+        <li>
+        <% allQuotes.forEach(quote => {%>
+            <p> <%= quote.quote %> </p>
+
+            <a href="/quotes/<%= quote._id%>">View</a> 
+            <a href="/quotes/<%= quote._id%>/update">Edit</a>
+
+            <form action="/quotes/<%= quote._id%>?_method=DELETE" method="POST">
+                <br>
+                <button>Delete</button>
+            </form>
+        </li>
+        <% }) %>
+    </ul>
+</body>
+</html>

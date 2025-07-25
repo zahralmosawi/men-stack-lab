@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body{
+            text-align: center;
+        }
+    </style>
+    <title>Write Quote</title>
+</head>
+<body>
+    <h2>Have a Quote</h2>
+    <form action="/quotes/writeQuote" method="post">
+        <label for="quote"> Write a quote:</label>
+        <br>
+        <input type="text" name="quote" id="quote" required>
+        <br>
+        <label for="authorName">Author name:</label>
+        <br>
+        <input type="text" name="author" id="authorName">
+        <br> <br>
+        <button type="submit">Send</button>
+    </form>
+</body>
+</html>

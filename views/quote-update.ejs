@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+      body{
+        text-align: center;
+      }
+    </style>
+    <title>Update</title>
+</head>
+<body>
+    <h1>Update The Quote</h1>
+    <form action="/quotes/<%= foundQuote._id %>?_method=PUT" method="POST">
+      <label>Quote:</label><br>
+      <textarea name="text" required><%= foundQuote.quote %></textarea><br>
+      <label>Author:</label><br>
+      <input type="text" name="author" value="<%= foundQuote.author %>"><br><br>
+      <button>Update</button>
+    </form>
+    <br>
+    <a href="/quotes">Back</a>
+</body>
+</html>
