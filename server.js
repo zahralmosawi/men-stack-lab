@@ -15,7 +15,7 @@ app.use(morgan("dev"))
 const dotenv = require('dotenv').config() //ALWAYS loads the .env variables
 
 // Middleware
-app.use(express.urlencoded({ extended: false }))
+app.use(express.urlencoded({ extended: true }))
 app.use(express.static('public')) 
 
 conntectToDB()

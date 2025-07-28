@@ -14,7 +14,7 @@
     <h1>Update The Quote</h1>
     <form action="/quotes/<%= foundQuote._id %>?_method=PUT" method="POST">
       <label>Quote:</label><br>
-      <textarea name="text" required><%= foundQuote.quote %></textarea><br>
+      <textarea name="quote" required><%= foundQuote.quote %></textarea><br>
       <label>Author:</label><br>
       <input type="text" name="author" value="<%= foundQuote.author %>"><br><br>
       <button>Update</button>

@@ -5,7 +5,7 @@ const router = require('express').Router()
 //EXPORT 
 module.exports = router
 
-//CREATE NEEDS POTH POST AND GET
+
 router.get('/writeQuote', (req,res) => {
     res.render('writeQuote.ejs')
 }) //now the user can see the page with forms
@@ -27,7 +27,7 @@ router.get('/', async (req,res)=>{
     }catch(error){
         console.log("can't find any data", error)
     }
-})//find all quotes in the database and send them to page called all-quotes to show them in a list
+})//find all quotes in the database
 
 router.get('/:quoteId', async (req,res)=>{
     try{
@@ -39,15 +39,14 @@ router.get('/:quoteId', async (req,res)=>{
 })//find a specific quote in db, render the user to page with that one quote's info
 
 //DELETE
-//USE A FORM WITH METHOD OVERRIDE; HTML FORMS DOSE NOT SUPPORT DELETE!
 router.delete('/:id', async (req,res)=>{
     try{
         await Quote.findByIdAndDelete(req.params.id)
         res.redirect('/quotes')
     }catch(error){
-        console.log("can't delete!", error)
+        console.log(error)
     }
-}) //delete a quote using the id from URL then redirect back to the list after deletion
+}) //delete a quote using the id from URL then redirect back to the list
 
 //UPDATE
 router.get('/:id/update', async (req,res)=>{
